@@ -1,0 +1,14 @@
+{
+  "name": "webpack-es6",
+  "version": "0.0.1",
+  "devDependencies": {
+    "webpack": "1.12",
+    "babel-loader": "6.2",
+    "babel-core": "6.4",
+    "babel-preset-es2015": "6.3",
+    "babel-preset-react": "6.3",
+    "stylus-loader": "1.5",
+    "style-loader": "0.13",
+    "css-loader": "0.23"
+  }
+}
