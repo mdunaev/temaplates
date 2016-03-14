@@ -87,7 +87,7 @@ export default class App extends React.Component {
         <ul style={{marginTop:20}}>
           {this.state.items.map( (item, i) => {
             var liStyle = {
-              height: 49
+              padding: 15 //ee!
             };
             var filter = this.state.filter;
             if(filter=='todo' && item.isDone)  liStyle.display='none';

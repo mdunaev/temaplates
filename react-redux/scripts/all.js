@@ -189,7 +189,7 @@
 	          { style: { marginTop: 20 } },
 	          this.state.items.map(function (item, i) {
 	            var liStyle = {
-	              height: 49
+	              padding: 15 //ee!
 	            };
 	            var filter = _this2.state.filter;
 	            if (filter == 'todo' && item.isDone) liStyle.display = 'none';
