@@ -143,6 +143,7 @@
 	      this.setState({
 	        items: newItems
 	      });
+	      this.refs.input.value = '';
 	    }
 	  }, {
 	    key: 'showAll',
@@ -187,7 +188,9 @@
 	          'ul',
 	          { style: { marginTop: 20 } },
 	          this.state.items.map(function (item, i) {
-	            var liStyle = {};
+	            var liStyle = {
+	              height: 49
+	            };
 	            var filter = _this2.state.filter;
 	            if (filter == 'todo' && item.isDone) liStyle.display = 'none';
 	            if (filter == 'done' && !item.isDone) liStyle.display = 'none';
@@ -197,10 +200,20 @@
 	              { key: i, style: liStyle },
 	              item.text,
 	              !item.isDone ? _react2.default.createElement(
-	                'div',
-	                { className: 'ee--button', style: { marginLeft: '50px' }, onClick: _this2.removeItem.bind(null, i) },
+	                'a',
+	                { href: '#', style: { marginLeft: 10 }, onClick: _this2.removeItem.bind(null, i) },
 	                'done'
-	              ) : ''
+	              ) : _react2.default.createElement(
+	                'span',
+	                { style: { color: '#aaaaaa' } },
+	                ' ',
+	                _react2.default.createElement(
+	                  'sup',
+	                  null,
+	                  'completed'
+	                ),
+	                ' '
+	              )
 	            );
 	          })
 	        ),

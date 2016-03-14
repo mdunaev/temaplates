@@ -53,6 +53,7 @@ export default class App extends React.Component {
     this.setState({
       items: newItems
     });
+    this.refs.input.value='';
   }
 
   showAll(){
@@ -85,7 +86,9 @@ export default class App extends React.Component {
 
         <ul style={{marginTop:20}}>
           {this.state.items.map( (item, i) => {
-            var liStyle = {};
+            var liStyle = {
+              height: 49
+            };
             var filter = this.state.filter;
             if(filter=='todo' && item.isDone)  liStyle.display='none';
             if(filter=='done' && !item.isDone) liStyle.display='none';
@@ -93,7 +96,10 @@ export default class App extends React.Component {
             return (
               <li key={i} style={liStyle}>
                 {item.text}
-                { (!item.isDone) ? <div className='ee--button' style={{marginLeft:'50px'}} onClick={this.removeItem.bind(null, i)}>done</div> : '' }
+                { (!item.isDone) ?
+                  <a href='#' style={{marginLeft:10}} onClick={this.removeItem.bind(null, i)}>done</a>
+                    :
+                  <span style={{color:'#aaaaaa'}}> <sup>completed</sup> </span> }
               </li>
             )
           })}
