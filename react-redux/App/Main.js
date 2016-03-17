@@ -33,6 +33,7 @@ var initialState = {
 };
 
 var store = createStore(reducer, initialState);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
